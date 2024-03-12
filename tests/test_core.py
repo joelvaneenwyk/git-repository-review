@@ -1,7 +1,7 @@
 """Test the core module."""
 import pytest
 
-from wizard_template.core import demo_function
+from git_repository_review.validate import demo_function
 
 
 @pytest.mark.parametrize(

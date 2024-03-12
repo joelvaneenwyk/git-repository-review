@@ -39,7 +39,7 @@ html_theme_options = {
         "colab_url": "",
     },
     "path_to_docs": "docs",
-    "repository_url": "https://github.com/fschuch/wizard-template",
+    "repository_url": "https://github.com/git@github.com:joelvaneenwyk/git-repository-review",
     "repository_branch": "main",
     "extra_footer": "",
     "home_page_in_toc": True,

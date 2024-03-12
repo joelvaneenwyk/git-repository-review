@@ -27,6 +27,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.11"
 pathspec = "^0.12.1"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 codespell = "^2.2.5"

@@ -73,16 +73,18 @@ show_contexts = true
 
 [tool.ruff]
 line-length = 120
-select = ["A", "B", "C", "D", "E", "F", "FBT", "I", "N", "S", "SIM", "UP", "W"]
 extend-exclude = ["./docs/conf.py"]
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint]
+select = ["A", "B", "C", "D", "E", "F", "FBT", "I", "N", "S", "SIM", "UP", "W"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["F401"] # imported but unused
 "tests/*" = ["S101"]     # use of assert detected
 "*.ipynb" = ["E402"]     # module level import not at top of file
-
-[tool.ruff.pydocstyle]
-convention = "numpy"
 
 [tool.mypy]
 pretty = true

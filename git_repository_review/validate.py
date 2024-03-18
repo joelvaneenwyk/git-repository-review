@@ -117,7 +117,7 @@ def git(*args: str) -> subprocess.CompletedProcess[bytes]:
         raise FileNotFoundError("git not found")
 
     arguments = list(args)
-    result = subprocess.run([git_executable] + arguments, capture_output=True, check=True)
+    result = subprocess.run([git_executable] + arguments, capture_output=True, check=True)  # noqa: S603
 
     # Check if the command was successful
     if result.returncode != 0:

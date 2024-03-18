@@ -112,7 +112,6 @@ docs = "jupyter-book build docs --path-output build"
 pre_docs_serve = "task pre_docs"
 docs_serve = "sphinx-autobuild docs build/_build/html --open-browser --watch git_repository_review"
 
-
 [tool.poetry-version-plugin]
 source = "git-tag"
 

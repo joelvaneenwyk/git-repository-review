@@ -1,2 +1,7 @@
 # Custom Dictionary Words
 dotenv
+mypy
+PYPI
+Schuch
+taskipy
+tomli

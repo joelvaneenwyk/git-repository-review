@@ -18,7 +18,7 @@
 This is a general-purpose template that aims to provide a magical start to any Python project.
 It includes the initial configuration of quality assurance tools, documentation, and automated actions.
 
-The template is powered by [Poetry](https://python-poetry.org/), which manages dependencies, builds, and publishes the package every time a new [release is created on GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), thanks to the [publish-package](https://github.com/joelvaneenwyk/git-repository-review/blob/main/.github/workflows/publish-package.yaml) workflow. The release process is simplified since the current version is recovered automatically at building time by using [poetry-version-plugin](https://github.com/tiangolo/poetry-version-plugin/blob/main/pyproject.toml) and GitHub can generate the release notes automatically based on labels on each Pull Request ([release.yml](.github/release.yml)).
+The template is powered by [Poetry](https://python-poetry.org/), which manages dependencies, builds, and publishes the package every time a new [release is created on GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), thanks to the [publish-package](https://github.com/joelvaneenwyk/git-repository-review/blob/develop/.github/workflows/publish-package.yaml) workflow. The release process is simplified since the current version is recovered automatically at building time by using [poetry-version-plugin](https://github.com/tiangolo/poetry-version-plugin/blob/main/pyproject.toml) and GitHub can generate the release notes automatically based on labels on each Pull Request ([release.yml](.github/release.yml)).
 
 This approach ensures that releases do not modify the main branch, eliminating the need to resolve merge conflicts on feature branches constantly. The downside is that the new version number must be manually entered for each release, rather than using the command `poetry version`. However, this is a reasonable trade-off, since it does not impose any restrictions on the project's versioning scheme or branching model.
 
@@ -35,17 +35,16 @@ The documentation is initialized with [Jupyter Books](https://jupyterbook.org/en
 
 ## Quick Start
 
-1. Click on [Use this template](https://github.com/new?template_name=git-repository-review&template_owner=git@github.com:joelvaneenwyk), creating a new project for you from it.
-2. If you don't have poetry, [download and install Poetry](https://python-poetry.org/docs/#installation) following the instructions for your OS.
-3. Clone your repository and make it your working directory.
-4. To install the project, its development dependencies, and the pre-commit hooks, just run:
+1. If you don't have poetry, [download and install Poetry](https://python-poetry.org/docs/#installation) following the instructions for your OS.
+2. Clone your repository and make it your working directory.
+3. To install the project, its development dependencies, and the pre-commit hooks, just run:
 
     ```bash
     poetry install
     poetry shell
     ```
 
-5. The regular maintenance tasks are handled by [taskipy](https://github.com/taskipy/taskipy/tree/master).
+4. The regular maintenance tasks are handled by [taskipy](https://github.com/taskipy/taskipy/tree/master).
 You can see the available tasks by running:
 
     ```plain
@@ -64,19 +63,19 @@ You can see the available tasks by running:
 
     Type `task <task_name>` to run a task. For example, to run the tests, try `task test`.
 
-6. Assert that everything is up and running:
+5. Assert that everything is up and running:
 
     ```bash
     task qa
     ```
 
-7. A helper script is included to rename the git username and project name from the template to your new project, try it with:
+6. A helper script is included to rename the git username and project name from the template to your new project, try it with:
 
     ```bash
     task wizard
     ```
 
-8. You can now review the changes, stage, and commit them on your repo. Run `task qa` another time to assert everything is still all right.
+7. You can now review the changes, stage, and commit them on your repo. Run `task qa` another time to assert everything is still all right.
 
 ## Next steps
 
@@ -91,5 +90,5 @@ You can see the available tasks by running:
 
 ## Copyright and License
 
-© 2023 [Felipe N. Schuch](https://github.com/git@github.com:joelvaneenwyk).
-All content is under [MIT License](https://github.com/joelvaneenwyk/git-repository-review/blob/main/LICENSE).
+© 2024 [Joel Van Eenwyk](https://github.com/joelvaneenwyk).
+All content is under [MIT License](https://github.com/joelvaneenwyk/git-repository-review/blob/develop/LICENSE).

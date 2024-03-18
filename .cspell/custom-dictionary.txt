@@ -20,6 +20,7 @@ cffi
 cfgv
 chardet
 Chardet
+codeql
 covdefaults
 Culich
 cyberinfrastructure
@@ -41,6 +42,7 @@ fnsys
 Frédéric
 functools
 furo
+gaurav
 gitdb
 gprof
 Heer

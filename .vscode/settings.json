@@ -25,5 +25,9 @@
     "**/build": true
   },
   "cSpell.enabled": true,
-  "cSpell.language": "en"
+  "cSpell.language": "en",
+  "cSpell.allowCompoundWords": true,
+  "cSpell.checkOnlyEnabledFileTypes": false,
+  "cSpell.experimental.enableSettingsViewerV2": true,
+  "cSpell.checkLimit": 6000
 }

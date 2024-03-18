@@ -4,6 +4,7 @@ on:
   push:
     branches: [main, develop]
   pull_request:
+    branches: [main, develop]
 
 jobs:
   qa:
@@ -19,8 +20,9 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.11", "3.12"]
+        platform: ["ubuntu", "macos", "windows"]
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform }}-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +37,7 @@ jobs:
         id: cache
         with:
           path: .venv
-          key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-test-v1
+          key: ${{ runner.os }}-python-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-test-v1
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'

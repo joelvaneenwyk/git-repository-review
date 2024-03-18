@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD033 -->
 
 <p align="center">
-<a href="https://github.com/git@github.com:joelvaneenwyk/git-repository-review"><img src="docs/logo.png" alt=Wizard template logo" width="320"></a>
+<a href="https://github.com/joelvaneenwyk/git-repository-review"><img src="docs/logo.png" alt=Wizard template logo" width="320"></a>
 </p>
 <p align="center">
     <em>Let the wizard do the heavy lifting so you can focus on your craft</em>
@@ -13,12 +13,12 @@
 
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![CI](https://github.com/git@github.com:joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml/badge.svg)](https://github.com/git@github.com:joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml)
+[![CI](https://github.com/joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml/badge.svg)](https://github.com/joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml)
 
 This is a general-purpose template that aims to provide a magical start to any Python project.
 It includes the initial configuration of quality assurance tools, documentation, and automated actions.
 
-The template is powered by [Poetry](https://python-poetry.org/), which manages dependencies, builds, and publishes the package every time a new [release is created on GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), thanks to the [publish-package](https://github.com/git@github.com:joelvaneenwyk/git-repository-review/blob/main/.github/workflows/publish-package.yaml) workflow. The release process is simplified since the current version is recovered automatically at building time by using [poetry-version-plugin](https://github.com/tiangolo/poetry-version-plugin/blob/main/pyproject.toml) and GitHub can generate the release notes automatically based on labels on each Pull Request ([release.yml](.github/release.yml)).
+The template is powered by [Poetry](https://python-poetry.org/), which manages dependencies, builds, and publishes the package every time a new [release is created on GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), thanks to the [publish-package](https://github.com/joelvaneenwyk/git-repository-review/blob/main/.github/workflows/publish-package.yaml) workflow. The release process is simplified since the current version is recovered automatically at building time by using [poetry-version-plugin](https://github.com/tiangolo/poetry-version-plugin/blob/main/pyproject.toml) and GitHub can generate the release notes automatically based on labels on each Pull Request ([release.yml](.github/release.yml)).
 
 This approach ensures that releases do not modify the main branch, eliminating the need to resolve merge conflicts on feature branches constantly. The downside is that the new version number must be manually entered for each release, rather than using the command `poetry version`. However, this is a reasonable trade-off, since it does not impose any restrictions on the project's versioning scheme or branching model.
 
@@ -92,4 +92,4 @@ You can see the available tasks by running:
 ## Copyright and License
 
 © 2023 [Felipe N. Schuch](https://github.com/git@github.com:joelvaneenwyk).
-All content is under [MIT License](https://github.com/git@github.com:joelvaneenwyk/git-repository-review/blob/main/LICENSE).
+All content is under [MIT License](https://github.com/joelvaneenwyk/git-repository-review/blob/main/LICENSE).

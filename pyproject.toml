@@ -4,7 +4,7 @@ version = "0.0.0" # no need to change, it is updated by poetry-version-plugin at
 description = "A template for a python project containing a library, tests, docs, and CI/CD."
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/git@github.com:joelvaneenwyk/git-repository-review"
+repository = "https://github.com/joelvaneenwyk/git-repository-review"
 authors = ["Felipe N. Schuch <me@git@github.com:joelvaneenwyk.com>"]
 packages = [{ include = "git_repository_review" }]
 classifiers = [
@@ -12,17 +12,16 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Intended Audience :: Developers",
 ]
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/git@github.com:joelvaneenwyk/git-repository-review/issues"
-"Changelog" = "https://github.com/git@github.com:joelvaneenwyk/git-repository-review/releases"
-"Documentation" = "https://git@github.com:joelvaneenwyk.github.io/git-repository-review/"
+"Bug Tracker" = "https://github.com/joelvaneenwyk/git-repository-review/issues"
+"Changelog" = "https://github.com/joelvaneenwyk/git-repository-review/releases"
+"Documentation" = "https://joelvaneenwyk.github.io/git-repository-review/"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -70,6 +69,9 @@ show_missing = true
 
 [tool.coverage.html]
 show_contexts = true
+
+[tool.pylint]
+max-line-length = 120
 
 [tool.ruff]
 line-length = 120

@@ -1,4 +1,6 @@
-# The Wizard Template for Python Projects
+# Git Repository Review
+
+<!-- markdownlint-disable MD033 -->
 
 <p align="center">
 <a href="https://github.com/git@github.com:joelvaneenwyk/git-repository-review"><img src="docs/logo.png" alt=Wizard template logo" width="320"></a>

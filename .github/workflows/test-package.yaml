@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
 
 jobs:
@@ -15,10 +15,13 @@ jobs:
 
   test:
     needs: qa
-    runs-on: ubuntu-latest
+
     strategy:
       matrix:
         python-version: ["3.11", "3.12"]
+
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 

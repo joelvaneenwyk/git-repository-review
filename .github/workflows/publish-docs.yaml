@@ -9,9 +9,6 @@ on:
   # allow manual triggering
   workflow_dispatch:
 
-env:
-  PYTHON_VERSION: 3.12
-
 jobs:
   deploy-doc:
     runs-on: ubuntu-latest
@@ -22,28 +19,30 @@ jobs:
 
       - name: Set up Python
         uses: actions/setup-python@v5
+        id: setup_python
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: 3.12
 
       - name: Set up cache
         uses: actions/cache@v4
         id: cache
         with:
           path: .venv
-          key: ${{ runner.os }}-python-${{ env.PYTHON_VERSION }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-docs-v1
+          key: ${{ runner.os }}-python-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-docs-v1
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           python -m venv .venv
-          source .venv/bin/activate
+          ./.venv/bin/activate
+          python -m pip install poetry
           python -m pip install poetry
           python -m poetry install --with docs
-          deactivate
+          ./.venv/bin/deactivate
 
       - name: Build the book
         run: |
-          source .venv/bin/activate
+          ./.venv/bin/activate
           task docs
 
       # Push the book's HTML to github-pages

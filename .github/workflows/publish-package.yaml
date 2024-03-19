@@ -5,9 +5,6 @@ on:
     # Trigger when a new versions is published
     types: [published]
 
-env:
-  PYTHON_VERSION: 3.12
-
 jobs:
   deploy-package:
     runs-on: ubuntu-latest
@@ -16,15 +13,16 @@ jobs:
 
       - name: Set up Python
         uses: actions/setup-python@v5
+        id: setup_python
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: 3.12
 
       - name: Set up cache
         uses: actions/cache@v4
         id: cache
         with:
           path: .venv
-          key: ${{ runner.os }}-python-${{ env.PYTHON_VERSION }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-deploy-v1
+          key: ${{ runner.os }}-python-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-docs-v1
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'

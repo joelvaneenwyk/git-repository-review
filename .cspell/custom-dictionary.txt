@@ -20,6 +20,9 @@ cffi
 cfgv
 chardet
 Chardet
+codecov
+Codecov
+CODECOV
 codeql
 covdefaults
 Culich

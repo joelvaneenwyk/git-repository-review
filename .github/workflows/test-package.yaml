@@ -28,24 +28,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: "🐍 Setup Python"
         uses: actions/setup-python@v5
         id: setup_python
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Set up cache
+      - name: "♻️ Setup cache"
         uses: actions/cache@v4
         id: cache
         with:
           path: .venv
           key: ${{ runner.os }}-python-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-test-package
 
-      - name: Install Dependencies
+      - name: "⚙️ Install Poetry"
         run: |
           python -m pip install poetry taskipy
 
-      - name: Install Dependencies (Unix)
+      - name: "⚙️ Install Dependencies"
         if: steps.cache.outputs.cache-hit != 'true'
         env:
           PYTHON_ACTIVATE: ${{ matrix.platform != 'windows' && 'source .venv/bin/activate' || '.venv/Scripts/activate.ps1' }}
@@ -55,7 +55,7 @@ jobs:
           poetry install
           deactivate
 
-      - name: Run Tests
+      - name: "🧪 Run Tests"
         env:
           PYTHON_ACTIVATE: ${{ matrix.platform != 'windows' && 'source .venv/bin/activate' || '.venv/Scripts/activate.ps1' }}
         run: |
@@ -63,3 +63,10 @@ jobs:
           ${{ env.PYTHON_ACTIVATE }}
           task test
           deactivate
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: joelvaneenwyk/git-repository-review
+          files: build/coverage.xml

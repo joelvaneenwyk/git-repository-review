@@ -8,14 +8,14 @@ repository = "https://github.com/joelvaneenwyk/git-repository-review"
 authors = ["Felipe N. Schuch <me@git@github.com:joelvaneenwyk.com>"]
 packages = [{ include = "git_repository_review" }]
 classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Intended Audience :: Developers",
 ]
 
 [tool.poetry.urls]
@@ -50,13 +50,14 @@ sphinx-autobuild = "^2024.2.4"
 [tool.pytest.ini_options]
 minversion = "7.0"
 addopts = [
-    "-s",
-    "--random-order",
-    "--cov=git_repository_review",
-    "--doctest-modules",
-    "--doctest-glob='*.md'",
-    "--doctest-continue-on-failure",
-    "--doctest-report=ndiff",
+  "-s",
+  "--random-order",
+  "--cov=git_repository_review",
+  "--cov-report=xml:build/coverage.xml",
+  "--doctest-modules",
+  "--doctest-glob='*.md'",
+  "--doctest-continue-on-failure",
+  "--doctest-report=ndiff",
 ]
 
 [tool.coverage.run]

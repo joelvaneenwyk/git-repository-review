@@ -43,12 +43,12 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           python -m venv .venv
-          source .venv/bin/activate
+          ./.venv/bin/activate
           python -m pip install poetry
           poetry install
           deactivate
 
       - name: Run Tests
         run: |
-          source .venv/bin/activate
+          ./.venv/bin/activate
           task test

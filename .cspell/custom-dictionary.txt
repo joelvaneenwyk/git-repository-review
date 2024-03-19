@@ -49,6 +49,7 @@ gaurav
 gitdb
 gprof
 Heer
+htmlcov
 idna
 IDNA
 inproceedings
@@ -78,6 +79,7 @@ Matsumoto
 mdit
 MDQP
 mdurl
+mkdocs
 moto
 mslex
 mssql
@@ -107,10 +109,14 @@ psycopg
 psycopgbinary
 ptyprocess
 pybtex
+pybuilder
+pycache
 pycparser
 pydata
 pydocstyle
+pyenv
 pyfakefs
+pyflow
 pygments
 Pygments
 pylint
@@ -118,6 +124,8 @@ pympler
 pymssql
 pymysql
 pyodbc
+pypa
+pypackages
 pyparsing
 PYPI
 pyppeteer
@@ -125,6 +133,7 @@ pypy
 pyqt
 pyside
 pysocks
+pytype
 pytz
 pywin
 pyyaml
@@ -139,6 +148,9 @@ Rieger
 Rokem
 rpds
 Schuch
+scrapy
+Scrapy
+sdist
 shlex
 smmap
 sympy

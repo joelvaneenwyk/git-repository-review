@@ -18,6 +18,7 @@ jobs:
     needs: qa
 
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
         platform: ["ubuntu", "macos", "windows"]
@@ -40,13 +41,22 @@ jobs:
           path: .venv
           key: ${{ runner.os }}-python-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-test-package
 
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Install Dependencies (Unix)
+        if: steps.cache.outputs.cache-hit != 'true' && matrix.platform != 'windows'
         run: |
           python -m venv .venv
-          ./.venv/bin/activate
+          source .venv/bin/activate
           python -m pip install poetry
-          poetry install
+          poetry install --with dev
+          deactivate
+
+      - name: Install Dependencies (Windows)
+        if: steps.cache.outputs.cache-hit != 'true' && matrix.platform == 'windows'
+        run: |
+          python -m venv .venv
+          .venv/Scripts/activate.ps1
+          python -m pip install poetry
+          poetry install --with dev
           deactivate
 
       - name: Run Tests

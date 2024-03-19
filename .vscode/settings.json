@@ -9,6 +9,21 @@
       "source.organizeImports.ruff": "explicit"
     }
   },
+  "files.associations": {
+    ".prototools": "toml",
+    "*.rasi": "css",
+    "*.bbmodel": "json",
+    "*.sublime-snippet": "xml",
+    "*.hbs": "html",
+    "*.ejs": "html",
+    "*.emu": "html",
+    "lesskey": "lesskey",
+    "*.Xresources": "xdefaults",
+    "i3/config": "i3",
+    "i3/*.conf": "i3",
+    "polybar/config": "ini",
+    "polybar/*.conf": "ini"
+  },
   "editor.rulers": [79],
   // --no-cov needed so that breakpoints work:
   // https://github.com/microsoft/vscode-python/issues/693

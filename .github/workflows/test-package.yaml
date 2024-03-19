@@ -41,27 +41,25 @@ jobs:
           path: .venv
           key: ${{ runner.os }}-python-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}-test-package
 
-      - name: Install Dependencies (Unix)
-        if: steps.cache.outputs.cache-hit != 'true' && matrix.platform != 'windows'
+      - name: Install Dependencies
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
-          python -m pip install poetry
-          poetry install --with dev
-          deactivate
+          python -m pip install poetry taskipy
 
-      - name: Install Dependencies (Windows)
-        if: steps.cache.outputs.cache-hit != 'true' && matrix.platform == 'windows'
+      - name: Install Dependencies (Unix)
+        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          PYTHON_ACTIVATE: ${{ matrix.platform != 'windows' && 'source .venv/bin/activate' || '.venv/Scripts/activate.ps1' }}
         run: |
           python -m venv .venv
-          .venv/Scripts/activate.ps1
-          python -m pip install poetry
-          poetry install --with dev
+          ${{ env.PYTHON_ACTIVATE }}
+          poetry install
           deactivate
 
       - name: Run Tests
+        env:
+          PYTHON_ACTIVATE: ${{ matrix.platform != 'windows' && 'source .venv/bin/activate' || '.venv/Scripts/activate.ps1' }}
         run: |
-          ./.venv/bin/activate
-          python -m pip install taskipy
+          python -m venv .venv
+          ${{ env.PYTHON_ACTIVATE }}
           task test
           deactivate

@@ -7,13 +7,17 @@ on:
   # on demand
   workflow_dispatch:
 
-permissions:
-  pull-requests: write
-  contents: write
-  
 jobs:
   auto-update:
     runs-on: ubuntu-latest
+    
+    # Give the default GITHUB_TOKEN write permission to commit and push, comment
+    # issues & post new PR; remove the ones you do not need
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

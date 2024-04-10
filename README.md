@@ -4,8 +4,7 @@
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![CI](https://github.com/joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml/badge.svg)](https://github.com/joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml)
 
-This is a general-purpose Python library for reviewing a Git repository to make sure it matches expected style 
-settings and is not doing anything that is not cross-platform compatible.
+This is a general-purpose Python library for reviewing a Git repository to make sure it matches expected style settings and is not doing anything that is not cross-platform compatible.
 
 To ensure code quality, several tools are configured:
 
@@ -14,8 +13,7 @@ To ensure code quality, several tools are configured:
 - [codespell](https://github.com/codespell-project/codespell) to check spelling
 - [pytest](https://docs.pytest.org/en/7.4.x/) as the test engine
 
-In addition, [Git hooks](https://pre-commit.com/) can be used to guarantee consistency and leverage the 
-aforementioned tools. The workflow [test-package.yaml](.github/workflows/test-package.yaml) runs them automatically for you.
+In addition, [Git hooks](https://pre-commit.com/) can be used to guarantee consistency and leverage the aforementioned tools. The workflow [test-package.yaml](.github/workflows/test-package.yaml) runs them automatically for you.
 
 The documentation is initialized with [Jupyter Books](https://jupyterbook.org/en/stable/intro.html), providing a promising approach for interactive tutorials.
 

@@ -1,11 +1,17 @@
 [tool.poetry]
 name = "git-repository-review"
-version = "0.0.0" # no need to change, it is updated by poetry-version-plugin at build time
-description = "A template for a python project containing a library, tests, docs, and CI/CD."
+
+# Do not update. This is updated by poetry-version-plugin at build time
+version = "0"
+
+description = "Review a Git repository to make sure it matches expected style settings and is not doing anything that is not cross-platform compatible."
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/joelvaneenwyk/git-repository-review"
-authors = ["Felipe N. Schuch <me@git@github.com:joelvaneenwyk.com>"]
+authors = [
+  "Joel Van Eenwyk <joel.vaneenwyk@gmail.com>",
+  "Felipe N. Schuch",
+]
 packages = [{ include = "git_repository_review" }]
 classifiers = [
   "License :: OSI Approved :: MIT License",

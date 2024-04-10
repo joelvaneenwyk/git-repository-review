@@ -1,35 +1,21 @@
 # Git Repository Review
 
-<!-- markdownlint-disable MD033 -->
-
-<p align="center">
-<a href="https://github.com/joelvaneenwyk/git-repository-review"><img src="docs/logo.png" alt=Wizard template logo" width="320"></a>
-</p>
-<p align="center">
-    <em>Let the wizard do the heavy lifting so you can focus on your craft</em>
-</p>
-
-----
-
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![CI](https://github.com/joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml/badge.svg)](https://github.com/joelvaneenwyk/git-repository-review/actions/workflows/test-package.yaml)
 
-This is a general-purpose template that aims to provide a magical start to any Python project.
-It includes the initial configuration of quality assurance tools, documentation, and automated actions.
+This is a general-purpose Python library for reviewing a Git repository to make sure it matches expected style 
+settings and is not doing anything that is not cross-platform compatible.
 
-The template is powered by [Poetry](https://python-poetry.org/), which manages dependencies, builds, and publishes the package every time a new [release is created on GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), thanks to the [publish-package](https://github.com/joelvaneenwyk/git-repository-review/blob/develop/.github/workflows/publish-package.yaml) workflow. The release process is simplified since the current version is recovered automatically at building time by using [poetry-version-plugin](https://github.com/tiangolo/poetry-version-plugin/blob/main/pyproject.toml) and GitHub can generate the release notes automatically based on labels on each Pull Request ([release.yml](.github/release.yml)).
-
-This approach ensures that releases do not modify the main branch, eliminating the need to resolve merge conflicts on feature branches constantly. The downside is that the new version number must be manually entered for each release, rather than using the command `poetry version`. However, this is a reasonable trade-off, since it does not impose any restrictions on the project's versioning scheme or branching model.
-
-To ensure code quality, several tools are suggested and pre-configured:
+To ensure code quality, several tools are configured:
 
 - [mypy](https://mypy.readthedocs.io/en/stable/) for static type checking
 - [ruff](https://github.com/astral-sh/ruff) as the linter and code formatter
 - [codespell](https://github.com/codespell-project/codespell) to check spelling
 - [pytest](https://docs.pytest.org/en/7.4.x/) as the test engine
 
-In addition, [Git hooks](https://pre-commit.com/) can be used to guarantee consistency and leverage the aforementioned tools. The workflow [test-package.yaml](.github/workflows/test-package.yaml) runs them automatically for you.
+In addition, [Git hooks](https://pre-commit.com/) can be used to guarantee consistency and leverage the 
+aforementioned tools. The workflow [test-package.yaml](.github/workflows/test-package.yaml) runs them automatically for you.
 
 The documentation is initialized with [Jupyter Books](https://jupyterbook.org/en/stable/intro.html), providing a promising approach for interactive tutorials.
 
@@ -77,18 +63,9 @@ You can see the available tasks by running:
 
 7. You can now review the changes, stage, and commit them on your repo. Run `task qa` another time to assert everything is still all right.
 
-## Next steps
-
-- You can now customize the codebase to best suit your project.
-- Don't forget to review the [LICENSE](./LICENSE) file on your repository to let others know how they can legally use your project.
-- Obtain a [Test PyPI token](https://test.pypi.org) and/or [PyPI token](https://pypi.org) (note that they are not the same) and add them as secrets to your repository (`TEST_PYPI_TOKEN` and `PYPI_TOKEN`, respectively) so that the deployment workflow will function.
-- Refer to [Managing labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels) and add the labels from [release.yml](.github/release.yml) to automatically organize your change logs.
-- It is highly recommended that you set up [branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule).
-- Follow the instructions in [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to set up a publishing source for your GitHub Pages site. When using the automated workflow, the files will be located at the root (`/`) on the `gh-pages` branch. You will need the secret `TOKEN` with your [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to make it work.
-- Refer to [Configuring issue templates for your repository](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser) to configure issue templates for your repository.
-- You can use CodeQL to identify vulnerabilities and errors in your code. Refer to [About CodeQL](https://codeql.github.com/docs/codeql-overview/about-codeql/) to learn more about it.
-
 ## Copyright and License
 
 © 2024 [Joel Van Eenwyk](https://github.com/joelvaneenwyk).
-All content is under [MIT License](https://github.com/joelvaneenwyk/git-repository-review/blob/develop/LICENSE).
+© 2023 [Felipe N. Schuch](https://github.com/fschuch).
+
+All content is under [MIT License](https://github.com/joelvaneenwyk/git-repository-review/blob/main/LICENSE).

@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/git_repository_review" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/scripts" />
+      <excludeFolder url="file://$MODULE_DIR$/wizard_template" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.12 (git-repository-review)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
